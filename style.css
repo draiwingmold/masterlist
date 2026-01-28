@@ -66,16 +66,17 @@ body {
     left: 50%;                /* กึ่งกลางจากซ้าย */
     transform: translate(-50%, -50%); /* ดึงกลับมาครึ่งหนึ่งของตัวเองเพื่อให้กลางพอดี */
     
-    background: rgba(82, 79, 79, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(15px);
-    padding: 50px 100px;
-    border-radius: 12px;
+    padding: 60px 100px;
+    border-radius: 30px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.2);
     z-index: 5;               /* ให้อยู่ชั้นล่างกว่าปุ่ม Logout และ Logo */
     /* คุมความกว้างขั้นต่ำไม่ให้กว้างเกินไป */
-    min-width: auto; 
+    min-width: 450px; 
     width: fit-content;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15); /* เพิ่มเงาให้ดูมีมิติ */
 }
 
 .hero-overlay h1 {
@@ -156,10 +157,17 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
-    border-bottom: 1px dotted #ddd;
+    padding: 20px;          /* เพิ่ม padding รอบด้าน */
+    margin-bottom: 15px;    /* เว้นระยะห่างระหว่างใบ */
+    background: #ffffff;
+    border-radius: 16px;    /* เพิ่มความมนให้ card */
+    border: 1px solid #f0f0f0; /* ใช้เส้นขอบจางๆ แทนเส้นประ */
+    transition: all 0.3s ease;
 }
-
+.product-card:hover {
+    transform: translateY(-3px); /* ให้ลอยขึ้นเวลาเอาเมาส์วาง */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
 .product-info {
     display: flex;
     align-items: center;
@@ -167,11 +175,12 @@ body {
 }
 
 .img-wrapper img {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     object-fit: contain;
-    border-radius: 6px;
+    border-radius: 8px;
     border: none;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); /* เพิ่มเงาจางๆ ให้ไอคอน */
 }
 
 .text-details { display: flex; flex-direction: column; }
@@ -342,8 +351,11 @@ body {
 }
 .modal-content {
     background-color: #ffffff;
-    margin: 15% auto;
-    padding: 0;
+    position: fixed; /* ใช้ fixed เพื่อให้อยู่กลางจอแม้มีการเลื่อนหน้าเว็บ */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
     width: 90%;
     max-width: 400px;
     border-radius: 20px;
