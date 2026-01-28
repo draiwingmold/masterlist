@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Fujipoly Drawing Center</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-logo">
+                <img src="img/pic3.png" alt="Fujipoly">
+                <h2>Login</h2>
+            </div>
+            
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="กรอกชื่อผู้ใช้งาน" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="กรอกรหัสผ่าน" required>
+                </div>
+
+                <button type="submit" class="btn-login">เข้าสู่ระบบ</button>
+            </form>
+            
+            <p id="error-msg" class="error-text"></p>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

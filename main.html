@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shim Mold - Fujipoly</title>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+
+ <header class="hero-section">
+    <div class="logo-badge">
+        <img src="img/pic2.jpg" alt="Fujipoly" class="main-logo">
+        <div class="vertical-line"></div>
+        <span class="badge-text">HOME</span>
+    </div>
+
+    <div class="logout-wrapper">
+        <button onclick="logout()" class="btn-logout">
+             ออกจากระบบ
+        </button>
+    </div>
+
+    <div class="hero-overlay">
+        <h1>Shim Mold</h1>
+        <p>FUJIPOLY (THAILAND) COMPANY LIMITED</p>
+    </div>
+</header>
+
+<main class="container">
+    <div class="list-header" id="toggleBtn">
+        <span class="title">Master list Mold</span>
+        <i class="fas fa-chevron-down arrow" id="arrowIcon"></i>
+    </div>
+    <div class="line-divider"></div>
+
+    <div id="itemList" class="item-container hidden">
+        <div id="product-list"></div>
+    </div>
+</main>
+<script>
+function logout() {
+    // ยืนยันก่อนออก
+    if (confirm("คุณต้องการออกจากระบบใช่หรือไม่?")) {
+        // ต้องเปลี่ยนเป็น index.html เพราะเราสลับหน้า Login มาไว้ชื่อนี้แล้ว
+        window.location.href = "index.html"; 
+    }
+}
+</script>
+
+    <script src="script.js"></script>
+    <footer class="main-footer">
+    <div class="footer-content">
+        <p>2026 Fujipoly (Thailand) Co., Ltd.</p>
+        <p class="developer-info">Created by: <span class="dev-name">Kraiwit Amantdeemeesakun/Technic Engineering</span></p>
+        <p class="contact-info">Contact: แผนก Technic Tel.125</p>
+    </div>
+</footer>
+    <script src="script.js"></script>
+    <div id="infoModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="modalTitle">รายละเอียดสินค้า</h2>
+            <span class="close-modal" id="closeModalBtn">&times;</span>
+        </div>
+        <div class="modal-body" id="modalBody">
+            </div>
+    </div>
+    </div>
+</body>
+</html>
